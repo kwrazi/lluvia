@@ -29,13 +29,13 @@ Install the `LunarG Vulkan SDK <https://www.lunarg.com/vulkan-sdk/>`_:
     wget -qO - http://packages.lunarg.com/lunarg-signing-key-pub.asc >> lunarg-signing-key-pub.asc
     apt-key add lunarg-signing-key-pub.asc
     wget -qO /etc/apt/sources.list.d/lunarg-vulkan-1.1.121-bionic.list http://packages.lunarg.com/vulkan/1.1.121/lunarg-vulkan-1.1.121-bionic.list
-    apt-get update 
+    apt-get update
     apt-get install lunarg-vulkan-sdk
 
 Verify that the SDK was successfully installed by running:
 
 .. code-block:: bash
-    
+
     vulkaninfo
 
 C++ Libraries
@@ -52,7 +52,7 @@ Clone and compile Lluvia's C++ libraries:
 Run the tests to verify that your compilation runs properly:
 
 .. code-block:: bash
-    
+
     CC=clang bazel test //...
 
 
@@ -74,5 +74,38 @@ To build the Python3 package, execute the commands below from the repository's t
 Open a Python3 interpreter and import lluvia package
 
 .. code-block:: python
-    
+
     import lluvia as ll
+
+Installation (Arch Linux)
+=========================
+
+Dependencies
+^^^^^^^^^^^^
+
+On Arch Linux system install the following:
+
+.. code-block:: console
+
+   pacman -Sy cmake clang vulkan-tools bazel
+
+C++ Libraries
+^^^^^^^^^^^^^
+
+This is pretty much the same as Ubuntu.
+
+Python3 package
+^^^^^^^^^^^^^^^
+
+.. code-block:: console
+
+   virtualenv venv  # if venv does not exists
+   cd lluvia
+   CC=clang bazel build cpp/core:core_cc_library
+   CC=clang bazel build @lua//:lua_cc_library
+   CC=clang bazel build @miniz//:miniz_cc_library
+   . ../venv/bin/activate  # if not activated
+   cd python
+   pip install -r requirements.txt
+   CC=clang python3 setup.py build bdist_wheel
+   pip install dist/lluvia-0.0.1-cp36-cp36m-linux_x86_64.whl -U

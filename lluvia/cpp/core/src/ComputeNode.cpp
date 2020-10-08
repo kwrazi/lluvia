@@ -135,7 +135,7 @@ void ComputeNode::initPipeline() {
         .setLayout(m_pipelineLayout);
 
     // create the compute pipeline
-    m_pipeline = m_device->get().createComputePipeline(nullptr, computePipeInfo);
+    m_pipeline = m_device->get().createComputePipeline(nullptr, computePipeInfo).value;
 }
 
 

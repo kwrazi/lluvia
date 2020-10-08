@@ -91,6 +91,16 @@ ll.registerNodeBuilder('RGBA2Gray', builder)
 
 Both files can then be exported into the engine to instantiate as many such nodes as required. Lluvia takes care of recording the operations for running a pipeline and submit it to the GPU efficiently.
 
+# Documentation
+
+Make sure you have installed sphinx documentation framework. To build and view the documentation (assuming that chromium is your goto browser, otherwise substitute your default):
+
+```console
+cd doc
+make html
+chromium build/html/index.html
+```
+
 # Supported Platforms
 
 * Linux.

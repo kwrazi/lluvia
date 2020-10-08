@@ -23,6 +23,7 @@ incDirs = ['../cpp/core/include',
 # path to build
 libDirs = ['../../bazel-bin/lluvia/cpp/core',
            '../../bazel-bin/external/lua',
+           '../../bazel-bin/external/miniz',
            os.path.join(VULKAN_SDK, 'lib')]
 
 
@@ -30,6 +31,7 @@ libDirs = ['../../bazel-bin/lluvia/cpp/core',
 libs   = [
     'core_cc_library',
     'lua_cc_library',
+    'miniz_cc_library',
 ]
 
 cflags = ['-std=c++17',

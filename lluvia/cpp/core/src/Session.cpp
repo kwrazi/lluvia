@@ -47,9 +47,8 @@
 
 #ifdef __linux__
 
-// at least in Ubuntu 18.04 and clang 6 <filesystem> is still in experimental
-#include <experimental/filesystem>
-namespace fs = std::experimental::filesystem;
+#include "lluvia/core/Filesystem.h"
+namespace fs = std::filesystem;
 
 #elif _WIN32
 
