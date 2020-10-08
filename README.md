@@ -93,13 +93,14 @@ Both files can then be exported into the engine to instantiate as many such node
 
 # Documentation
 
-Make sure you have installed sphinx documentation framework. To build and view the documentation (assuming that chromium is your goto browser, otherwise substitute your default):
+Make sure you have installed sphinx documentation framework. To build and view the documentation:
 
 ```console
 cd doc
 make html
 chromium build/html/index.html
 ```
+assuming that chromium is your goto browser, otherwise substitute your default.
 
 # Supported Platforms
 

@@ -108,4 +108,4 @@ Python3 package
    cd python
    pip install -r requirements.txt
    CC=clang python3 setup.py build bdist_wheel
-   pip install dist/lluvia-0.0.1-cp36-cp36m-linux_x86_64.whl -U
+   pip install dist/lluvia-*.whl -U
